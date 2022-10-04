@@ -1,0 +1,19 @@
+1. Contare quanti iscritti ci sono stati ogni anno
+SELECT COUNT(enrolment_date) as `Numero Iscritti`, YEAR(`enrolment_date`) as `Anno` FROM `students` GROUP by YEAR(`enrolment_date`);
+
+
+2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
+SELECT COUNT(id) as `Numero Insegnanti`, `office_address` as `Indirizzo Ufficio` FROM `teachers` GROUP BY `office_address`;
+
+
+3. Calcolare la media dei voti di ogni appello d'esame
+SELECT `exam_id` as `ID Esame`, COUNT(exam_id) as `Appelli`, ROUND(AVG(vote)) as `Media` FROM `exam_student` GROUP BY `exam_id`;
+
+
+4. Contare quanti corsi di laurea ci sono per ogni dipartimento
+SELECT `department_id` as `Dipartimento `, COUNT(department_id) as `Numero Corsi di Laurea` FROM `degrees` GROUP BY (department_id);
+
+
+
+
+
